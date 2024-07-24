@@ -1,0 +1,67 @@
+---------------------------------------------------------------
+•P-Access-Network-Info in Hex: 4g = mcc + mnc + TAC + Cel
+---------------------------------------------------------------
+Rules to decode 4g P-Access-Network-Info from Hex to dec:
+---------------------------------------------------------------
+Before decoding from HEX: number of digits: 16
+mcc: 3 digits
+mnc: 2 digits
+TAC: 4 digits
+cel: 7 digits
+
+After decoding to decimal: 16+3 = 19
+mcc: 3 digits
+mnc: 2 digits 
+TAC: 4+1 = 5 digits
+cel: 7+2 = 9 digits
+
+example:
+4g CGI (Hex)= 424 03 01fb 	0290703		(16 digits)
+
+mcc in (Hex): 3 digits = 424
+mnc in (Hex): 2 digits = 03
+TAC in (Hex): 4 digits = 01fb
+cel in (Hex): 7 digits = 0290703
+
+mcc in (dec): 3 digits = 			-> 424
+mnc in (dec): 2 digits = 			-> 03
+TAC in (dec): 4 digits = 507 		-> 00507
+cel in (dec): 9 digits = 2688771 	-> 002688771
+
+4g CGI (dec) = 424 03 00507 002688771	(19 digits)
+
+---------------------------------------------------------------
+•P-Access-Network-Info: 5g = mcc + mnc + TAC + Cel
+---------------------------------------------------------------
+Rules to decode 5g P-Access-Network-Info from Hex to dec:
+---------------------------------------------------------------
+Before decoding HEX: number of digits: 20
+mcc: 3 digits
+mnc: 2 digits
+TAC: 6 digits
+cel: 9 digits
+
+After decoding to decimal: 20+2 = 22
+mcc: 		3  digits
+mnc: 		2  digits
+TAC: 		6  digits
+cel: 9+2 =  11 digits
+
+example: 
+5g CGI (Hex)= 424 03 0001FB 212898003		(20 digits)
+
+mcc in (Hex): 3 digits = 424
+mnc in (Hex): 2 digits = 03
+TAC in (Hex): 6 digits = 0001FB
+cel in (Hex): 9 digits = 212898003
+
+mcc in (dec): 3  digits = 				-> 424
+mnc in (dec): 2  digits = 				-> 03
+TAC in (dec): 6  digits = 507  			-> 000507
+cel in (dec): 11 digits = 8900935683  	-> 08900935683
+
+5g CGI (dec) = 424 03 000507 08900935683	(22 digits)
+
+---------------------------------------------------------------
+4240301fb0290703	
+424030001FB212898003

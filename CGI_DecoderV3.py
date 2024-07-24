@@ -4,7 +4,7 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 import os
 import sys
-
+# pyinstaller --name du_CGI_Decoder --onefile --windowed --icon=logo.ico CGI_DecoderV3.py
 # Ensure Pillow is installed: pip install pillow
 # use sys._MEIPASS2
 def resource_path(relative_path):
