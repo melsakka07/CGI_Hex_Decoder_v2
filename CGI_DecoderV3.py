@@ -65,7 +65,7 @@ def decode_5g_cgi(hex_str):
 
     # Split the hex string into its components
     mcc = hex_str[:3]
-    mnc = hex_str[:5]
+    mnc = hex_str[3:5]
     tac_hex = hex_str[5:11]
     cell_id_hex = hex_str[11:]
 
@@ -79,14 +79,16 @@ def decode_5g_cgi(hex_str):
 
     # Combine all parts to form the final CGI in decimal
     cgi_dec = f'{mcc}{mnc}{tac_dec_formatted}{cell_id_dec_formatted}'
+    cdr_dec = f'{cell_id_dec_formatted}'
 
     return {
         'MCC': (mcc, len(mcc)),
         'MNC': (mnc, len(mnc)),
         'TAC (Hex)': (tac_hex, len(tac_hex)),
         'TAC (Dec)': (tac_dec_formatted, len(tac_dec_formatted)),
-        'Cell ID (Hex)': (cell_id_hex, len(cell_id_hex)),
-        'Cell ID (Dec)': (cell_id_dec_formatted, len(cell_id_dec_formatted)),
+        'CGI Cell ID (Hex)': (cell_id_hex, len(cell_id_hex)),
+        'CGI Cell ID (Dec)': (cell_id_dec_formatted, len(cell_id_dec_formatted)),
+        'CDR Cell ID (Dec)': (cdr_dec, len(cdr_dec)),
         '5G CGI (Dec)': (cgi_dec, len(cgi_dec))
     }
 
